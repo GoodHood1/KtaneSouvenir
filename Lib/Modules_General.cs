@@ -72,6 +72,7 @@ public partial class SouvenirModule
     const string _Button = "BigButton";
     const string _ButtonSequences = "buttonSequencesModule";
     const string _CaesarCycle = "caesarCycle";
+    const string _CaesarsMaths = "caesarsMaths";
     const string _Calendar = "calendar";
     const string _Cartinese = "cartinese";
     const string _Catchphrase = "catchphrase";
@@ -570,6 +571,7 @@ public partial class SouvenirModule
             { _Button, ProcessButton },
             { _ButtonSequences, ProcessButtonSequences },
             { _CaesarCycle, ProcessCaesarCycle },
+            { _CaesarsMaths, ProcessCaesarsMaths },
             { _Calendar, ProcessCalendar },
             { _Cartinese, ProcessCartinese },
             { _Catchphrase, ProcessCatchphrase },

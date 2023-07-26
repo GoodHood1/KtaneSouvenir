@@ -12,6 +12,23 @@ public partial class SouvenirModule
         return processSpeakingEvilCycle1(module, "CaesarCycleScript", Question.CaesarCycleWord, _CaesarCycle);
     }
 
+    private IEnumerable<object> ProcessCaesarsMaths(KMBombModule module)
+    {
+        var comp = GetComponent(module, "caesarsMathsScript");
+        var fldSolved = GetField<bool>(comp, "moduleSolved");
+
+        while (!fldSolved.Get())
+            yield return new WaitForSeconds(.1f);
+        _modulesSolved.IncSafe(_CaesarsMaths);
+
+        var ledIndices = GetArrayField<int>(comp, "ledIndices").Get(expectedLength: 3);
+        var colourOptions = new[] { "Yellow", "Blue", "Red", "Green" };
+
+        addQuestions(module,
+            Enumerable.Range(0, 3).Select(led => makeQuestion(Question.CaesarsMathsLEDS, _CaesarsMaths,
+            formatArgs: new[] { ordinal(led + 1) }, correctAnswers: new[] { colourOptions[ledIndices[led]] })));
+    }
+
     private IEnumerable<object> ProcessCalendar(KMBombModule module)
     {
         var comp = GetComponent(module, "calendar");

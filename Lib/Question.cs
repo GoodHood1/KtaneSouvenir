@@ -346,6 +346,10 @@ namespace Souvenir
           ExampleExtraFormatArguments = new[] { "message", "response" }, ExampleExtraFormatArgumentGroupSize = 1)]
         CaesarCycleWord,
 
+        [SouvenirQuestion("What was the colour of the {1} LED in {0}?", "CaesarsMaths", AnswerLayout.TwoColumns4Answers, "Yellow", "Blue", "Red", "Green",
+            ExampleExtraFormatArguments = new[] { QandA.Ordinal }, ExampleExtraFormatArgumentGroupSize = 1)]
+        CaesarsMathsLEDS,
+
         [SouvenirQuestion("What was the LED color in {0}?", "Calendar", AnswerLayout.TwoColumns4Answers, "Green", "Yellow", "Red", "Blue", TranslateAnswers = true)]
         CalendarLedColor,
 
